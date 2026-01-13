@@ -80,13 +80,17 @@ export default function Services() {
                 {/* Background gradient on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                 
-                {/* Icon */}
+                {/* Large Icon with Gradient Background */}
                 <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className={`inline-flex p-4 rounded-2xl ${service.bgColor} mb-6 relative z-10`}
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative mb-8"
                 >
-                  <service.icon className={`w-8 h-8 bg-gradient-to-br ${service.color} bg-clip-text text-transparent`} strokeWidth={2.5} />
+                  <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow relative z-10`}>
+                    <service.icon className="w-12 h-12 text-white" strokeWidth={2} />
+                  </div>
+                  {/* Glow effect */}
+                  <div className={`absolute inset-0 w-24 h-24 rounded-3xl bg-gradient-to-br ${service.color} blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
                 </motion.div>
 
                 {/* Content */}
